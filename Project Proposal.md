@@ -15,7 +15,7 @@ The question that we are planning to investigate is determining if one is qualif
 
 ## Project Dataset
 
-We found the dataset on this [website]([website](https://ffiec.cfpb.gov/data-browser/data/2020?category=states&items=NY&leis=7H6GLXDRUGQFU57RNE97)
+We found the dataset on this [website](https://ffiec.cfpb.gov/data-browser/data/2020?category=states&items=NY&leis=7H6GLXDRUGQFU57RNE97)
 
 The dataset that we are planning to use is a 2020 HMDA Dataset in the state of New  York, and the financial institution would be JPMorgan Chase Bank, National Association - 7H6GLXDRUGQFU57RNE97. It contains 99 columns, including ethnicity, race, loan type, income, action taken, preapproval, debt to income ratio, and so on, which is sufficient for us to find the factors that contribute to the current system. Thus, this data set will allow us to answer this question since it provides a large amount of data, which would be enough for us to divide them into a training set, a validation set, and a testing set that would help us develop our new scheme and test the accuracy. 
 
