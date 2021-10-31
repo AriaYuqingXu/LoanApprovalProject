@@ -28,9 +28,9 @@ Now, the dataset contains documentation of 371,930 samples of loan applications 
 
 Boxplot to see the distribution of features by loan approval status, - percentile, it helps us identify outliers which were removed in later data-cleaning process.
 
-![](images/loan1.png )|![](images/loan2.png)
-![](images/income1.png)![](images/income2.png)
-![](images/property1.png) ![](images/property2.png)
+![](images/loan.png )
+![](images/income.png)
+![](images/property.png) 
 
 Histogram to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. 
 Oberservation: The number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. Most prominently in ….
