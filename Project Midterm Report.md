@@ -96,9 +96,9 @@ Another model that we have implemented is Random Forest. Random Forest performs 
 <img src=images/randomforest.png width="600" height="300">
 </p>
 
-## Plan for developing the project over the rest of the semester
 
-We are planning to perform regularization to prevent overfitting, and decrease variance. Another reason for using regularization is that we aim to develop a new system that is fair, and it will penalize certain unfair features towards loan approval.
+## Plan for developing the project over the rest of the semester
+With the current models that we have constructed so far, we are able to determine the features with stronger significance in predicting loan approval. In the future, we are planning to perform regularization to prevent overfitting, and decrease variance. Another reason for using regularization is that we aim to develop a new system that is fair, and it will penalize certain unfair features towards loan approval to create a better model.
 
 
 
