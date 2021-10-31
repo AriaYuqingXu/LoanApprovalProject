@@ -66,8 +66,9 @@ A model that we have implemented is Regression, we applied linear regression to 
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improve accuracy, efficiency in handling large dataset, and other. Most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process.
 *** mention results for the feature importance
 
+<p align="center">
 <img src=images/randomforest.png width="500" height="200">
-
+</p>
 
 ### Plan for developing the project over the rest of the semester
 
