@@ -15,7 +15,7 @@ When we first examined our dataset, among the 99 features, we decided to first m
 Next, we convert the data type for categorical features into string type values in order to input them into different algorithms in the future. Then, we treat categorical features that contain only two possible values as boolean values corresponding to the values of 0 and 1. For categorical features with multiple values, we applied one hot encoding. Furthermore, we decided to drop some of the outliers that we have identified in our data exploratory phase and also looked through the columns with missing values.
 
  **Columns with Missing Values**
-![alt-text-1](missing.png "title-1")
+![](images/missing.png)
 
 
 we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant age above 62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating not applicable. Lastly, we realized that the income column is also partially absent. So we created another feature, missing_income, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
