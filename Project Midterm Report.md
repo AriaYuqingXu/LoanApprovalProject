@@ -23,7 +23,7 @@ Next, we convert the data type for categorical features into string type values 
 
  **Columns with Missing Values**
 <p align="center">
-<img src=images/missing.png width="300" height="200">
+<img src=images/missing.png width="300" height="180">
 </p>
 
 we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant_age_above_62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating “not applicable”. Lastly, we realized that the income column is also partially absent. So we created another feature, ‘missing_income’, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
@@ -39,9 +39,9 @@ In order to better understand our dataset, we created data visualizations regard
 
 
 <p align="center">
-<img src=images/loan.png width="550" height="300">
-<img src=images/income.png width="550" height="300">
-<img src=images/property.png width="550" height="300">
+<img src=images/loan.png width="550" height="270">
+<img src=images/income.png width="550" height="270">
+<img src=images/property.png width="550" height="270">
 </p>
 
 The above Box Plot confirms the presence of outliers/extreme values, which indicates the loan amount, income, and property_value disparities among all the loan applications.
@@ -54,14 +54,14 @@ Histogram to see the variability of the numbers of loan applications that are ap
 Oberservation: The number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. Most prominently in ….
 
 <p align="center">
-<img src=images/hist1.png width="600" height="300">
+<img src=images/hist1.png width="600" height="250">
 </p> 
 
 The first histogram shows that the proportion of male applicants who got approved is higher than the proportion of female applicants who got approved, which indicates that the current system might have a gender bias.
 Besides, the second histogram conveys that the current loan approval system favors younger customers more than those older, especially those whose ages are greater than 74, which indicates that age discrimination might exist in the current system.
 
 <p align="center">  
-<img src=images/hist2.png width="600" height="300">
+<img src=images/hist2.png width="600" height="250">
 </p>
 
 The third histogram shows that the system favors Not Hispanic or Latino since the proportion of Not Hispanic or Latino applicants who got approved is significantly higher than that of others, which tells us that ethnicity discrimination is not unlikely to happen in the current loan approval system.
@@ -79,21 +79,21 @@ We are exploring the most correlated features associated with the target feature
 A model that we have implemented is Regression, we applied linear regression to real value variables and logistic regression to categorical and boolean variables. Overall, Linear Regression and Logistic Regression works in a similar way. Linear regression uses a linear function to predict y that minimizes the sum of square residuals and returns numerical values associated with the target feature. By running a linear model on features with real valued data, we can see that the total_units has the most significant impact on the loan approval process since it has the highest coefficient.
 
 <p align="center">  
-<img src=images/ols.png width="500" height="500">
+<img src=images/ols.png width="500" height="400">
 </p>
 
 #### Logistic Regression
 We also applied a logistics model on categorical and boolean features. After obtaining the model summary from each feature, we decided to take features with coefficient < 0.01 out of consideration regarding what factors can potentially influence the loan approval status. By comparing the coefficients from the summaries of different features, we found that missing_income, Applicant_sex, applicant_age_above_62 are the important features among all the input features for the logistic model. 
 Below is an example of the model summary of feature missing_income.
 <p align="center">  
-<img src=images/logit.png width="500" height="500"> 
+<img src=images/logit.png width="500" height="400"> 
 </p>
 
 #### Random Forest
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improve accuracy, efficiency in handling large dataset, and other. The most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process. From the result of the random forest model, it illustrates that debt_to_income_ratio and loan_amount are the most important factors toward loan approval. However, applicant_age_above_62 and co-appliacnt_ethinicity also play a role in determining whether a loan should be approved, indicating that the bank does take in unfair elements into consideration and their loan approval system does appear as biased.
 
 <p align="center">
-<img src=images/randomforest.png width="500" height="300">
+<img src=images/randomforest.png width="600" height="300">
 </p>
 
 ## Plan for developing the project over the rest of the semester
