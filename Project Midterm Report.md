@@ -16,7 +16,7 @@ Next, we convert the data type for categorical features into string type values 
 
  **Columns with Missing Values**
  
-![](images/missing.png)
+![](images/missing.png =250x)
 
 we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant_age_above_62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating “not applicable”. Lastly, we realized that the income column is also partially absent. So we created another feature, ‘missing_income’, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
 For our target feature, “action taken”, which tells whether the loan application is approved or not, we transform the feature value to 1 if it’s approved, and 0 otherwise.
@@ -28,7 +28,7 @@ Now, the dataset contains documentation of 371,930 samples of loan applications 
 
 Boxplot to see the distribution of features by loan approval status, - percentile, it helps us identify outliers which were removed in later data-cleaning process.
 
-![](images/loan1.png)|![](images/loan2.png)
+![](images/loan1.png =125x )|![](images/loan2.png =250x)
 ![](images/income1.png)![](images/income2.png)
 ![](images/property1.png) ![](images/property2.png)
 
