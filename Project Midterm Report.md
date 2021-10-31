@@ -33,9 +33,9 @@ Now, the dataset contains documentation of 371,930 samples of loan applications 
 
 We used boxplot to see the distribution and the percentiles of features by loan approval status, it helps us identify outliers which were removed in later data-cleaning process.
 
-<img src=images/loan.png width="300" height="200">
-<img src=images/income.png width="300" height="200">
-<img src=images/property.png width="300" height="200">
+<img src=images/loan.png width="500" height="200">
+<img src=images/income.png width="500" height="200">
+<img src=images/property.png width="500" height="200">
 
 
 
@@ -43,8 +43,8 @@ Histogram to see the variability of the numbers of loan applications that are ap
 Oberservation: The number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. Most prominently in ….
 
 
-<img src=images/hist1.png width="200" height="150">
-<img src=images/hist2.png width="200" height="150">
+<img src=images/hist1.png width="500" height="150">
+<img src=images/hist2.png width="500" height="150">
 
 
 
@@ -65,8 +65,8 @@ A model that we have implemented is Regression, we applied linear regression to 
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improve accuracy, efficiency in handling large dataset, and other. Most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process.
 *** mention results for the feature importance
 
+<img src=images/randomforest.png width="300" height="200">
 
-![](images/randomforest.png) 
 
 ### Plan for developing the project over the rest of the semester
 
