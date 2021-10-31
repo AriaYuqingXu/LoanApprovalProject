@@ -28,7 +28,7 @@ Now, the dataset contains documentation of 371,930 samples of loan applications 
 
 Boxplot to see the distribution of features by loan approval status, - percentile, it helps us identify outliers which were removed in later data-cleaning process.
 
-![](images/loan1.png )|![](images/loan2.png )
+![](images/loan1.png )|![](images/loan2.png)
 ![](images/income1.png)![](images/income2.png)
 ![](images/property1.png) ![](images/property2.png)
 
