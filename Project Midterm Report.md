@@ -18,7 +18,7 @@ Considering that we have a large number of features, we are less concerned with 
 We are planning to use a validation set, k-fold-validation specifically to test effectiveness. We also plan to compare MSE, p-values, and R-squared values for different models to choose the optimal model.
 
 ## Data Cleaning and Transformation
-When we first examined our dataset, among the 99 features, we decided to first manually remove 63 features that we considered as irrelevant or duplicate information based on the feature definition and possible values of each feature presented on the data field website.
+When we first examined our dataset, among the 99 features, we decided to first manually remove 63 features that we considered as irrelevant or duplicate information based on the feature definition and possible values of each feature presented on the data field [website](https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/).
 Next, we convert the data type for categorical features into string type values in order to input them into different algorithms in the future. Then, we treat categorical features that contain only two possible values as boolean values corresponding to the values of 0 and 1. For categorical features with multiple values, we applied one hot encoding. Furthermore, we decided to drop some of the outliers that we have identified in our data exploratory phase and also looked through the columns with missing values.
 
  **Columns with Missing Values**
