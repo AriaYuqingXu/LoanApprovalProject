@@ -18,9 +18,8 @@ When we first examined our dataset, among the 99 features, we decided to first m
 Next, we convert the data type for categorical features into string type values in order to input them into different algorithms in the future. Then, we treat categorical features that contain only two possible values as boolean values corresponding to the values of 0 and 1. For categorical features with multiple values, we applied one hot encoding. Furthermore, we decided to drop some of the outliers that we have identified in our data exploratory phase and also looked through the columns with missing values.
 
  **Columns with Missing Values**
- 
 
-<img src=images/missing.png width="100" height="100">
+<img src=images/missing.png width="200" height="150">
 
 
 we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant_age_above_62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating “not applicable”. Lastly, we realized that the income column is also partially absent. So we created another feature, ‘missing_income’, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
@@ -34,15 +33,20 @@ Now, the dataset contains documentation of 371,930 samples of loan applications 
 
 We used boxplot to see the distribution and the percentiles of features by loan approval status, it helps us identify outliers which were removed in later data-cleaning process.
 
-![](images/loan.png)
-![](images/income.png)
-![](images/property.png) 
+<img src=images/loan.png width="300" height="200">
+<img src=images/income.png width="300" height="200">
+<img src=images/property.png width="300" height="200">
+
+
 
 Histogram to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. 
 Oberservation: The number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. Most prominently in ….
 
-![](images/hist1.png)
-![](images/hist2.png)
+
+<img src=images/hist1.png width="200" height="150">
+<img src=images/hist2.png width="200" height="150">
+
+
 
 
 
