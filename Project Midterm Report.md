@@ -39,9 +39,9 @@ In order to better understand our dataset, we created data visualizations regard
 
 
 <p align="center">
-<img src=images/loan.png width="550" height="270">
-<img src=images/income.png width="550" height="270">
-<img src=images/property.png width="550" height="270">
+<img src=images/loan.png width="600" height="270">
+<img src=images/income.png width="600" height="270">
+<img src=images/property.png width="600" height="270">
 </p>
 
 The above Box Plot confirms the presence of outliers/extreme values, which indicates the loan amount, income, and property_value disparities among all the loan applications.
