@@ -15,40 +15,38 @@ When we first examined our dataset, among the 99 features, we decided to first m
 Next, we convert the data type for categorical features into string type values in order to input them into different algorithms in the future. Then, we treat categorical features that contain only two possible values as boolean values corresponding to the values of 0 and 1. For categorical features with multiple values, we applied one hot encoding. Furthermore, we decided to drop some of the outliers that we have identified in our data exploratory phase and also looked through the columns with missing values.
 
  **Columns with Missing Values**
+ 
 ![](images/missing.png)
-
-
-we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant age above 62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating not applicable. Lastly, we realized that the income column is also partially absent. So we created another feature, missing_income, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
-For our target feature, action taken, which tells whether the loan application is approved or not, we transform the feature value to 1 if it’s approved, and 0 otherwise.
-
-
-
- 
- 
 
 we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant_age_above_62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating “not applicable”. Lastly, we realized that the income column is also partially absent. So we created another feature, ‘missing_income’, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
 For our target feature, “action taken”, which tells whether the loan application is approved or not, we transform the feature value to 1 if it’s approved, and 0 otherwise.
 
-#### Number of features and examples presented
+### Number of features and examples presented
+
 Now, the dataset contains documentation of 371,930 samples of loan applications with 31 features that we determined as valuable and insightful in determining our loan approval models. Some examples of the features are derived_race, debt_to_income_ratio. 
 ### Histogram and boxplots for various important features about the dataset
+
 Boxplot to see the distribution of features by loan approval status, - percentile, it helps us identify outliers which were removed in later data-cleaning process.
 
-![](loan1.png)|![](loan2.png)
-![](income1.png)![alt](income2.png)
-![]()![alt](property1.png) ![alt](property2.png)
+![](images/loan1.png)|![](images/loan2.png)
+![](images/income1.png)![](images/income2.png)
+![](images/property1.png) ![](images/property2.png)
 
 Histogram to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. 
 Oberservation: The number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. Most prominently in ….
 
-![alt-text-1](hist1.png "title-1")
-![alt-text-2](hist2.png "title-2")
+![](images/hist1.png)
+![](images/hist2.png)
 
 ### Exploratory Data Analysis (preliminary analyses)
 We are exploring the most correlated features associated with the target feature, and investigating whether those features are significant by performing regression (linear regression and logistic regression), and random forest. 
 After data preprocessing, we divide the dataset into two parts, with 80% of the data as the training set and the rest 20% as the test set.  We used linear regression for features with  numerical values, and we used logistic regression on features with categorical values and boolean values. 
 We performed random forest to further investigate the top 15 important features of loan approval.
-![alt-text-1](randomforest.png "random forest") ### Plan for developing the project over the rest of the semester
+
+![](images/randomforest.png) 
+
+### Plan for developing the project over the rest of the semester
+
 We are planning to perform regularization to prevent overfitting, and decrease variance. Another reason for using regularization is that we aim to develop a new system that is fair, and it will penalize certain unfair features towards loan approval.
 
 ### Plan for developing the project over the rest of the semester
