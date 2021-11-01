@@ -49,7 +49,7 @@ The above Box Plot confirms the presence of outliers/extreme values, which indic
 Further more, we would like to investigate if there are bias hidden in the loan approval algorithms by plotting histograms to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. Thus, we used Histogram to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. 
 
 <p align="center">
-<img src=images/hist1.png width="520" height="180">
+<img src=images/hist1.png width="550" height="200">
 </p> 
 
 The first histogram shows that the proportion of male applicants who got approved is higher than the proportion of female applicants who got approved, which indicates that the current system might have a gender bias.
@@ -74,14 +74,14 @@ We are exploring the most correlated features associated with the target feature
 A model that we have implemented is Regression, we applied linear regression to real value variables and logistic regression to categorical and boolean variables. Overall, Linear Regression and Logistic Regression works in a similar way. Linear regression uses a linear function to predict y that minimizes the sum of square residuals and returns numerical values associated with the target feature. By running a linear model on features with real valued data, we can see that the total_units has the most significant impact on the loan approval process since it has the highest coefficient.
 
 <p align="center">  
-<img src=images/ols.png width="300" height="200">
+<img src=images/ols.png width="350" height="250">
 </p>
 
 #### Logistic Regression
 We also applied a logistics model on categorical and boolean features. After obtaining the model summary from each feature, we decided to take features with coefficient < 0.01 out of consideration regarding what factors can potentially influence the loan approval status. By comparing the coefficients from the summaries of different features, we found that missing_income, Applicant_sex, applicant_age_above_62 are the important features among all the input features for the logistic model. 
 Below is an example of the model summary of feature missing_income.
 <p align="center">  
-<img src=images/logit.png width="290" height="200"> 
+<img src=images/logit.png width="320" height="240"> 
 </p>
 
 #### Random Forest
