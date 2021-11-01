@@ -52,7 +52,7 @@ Further more, we would like to investigate if there are bias hidden in the loan 
 <img src=images/hist1.png width="550" height="200">
 </p> 
 
-The first histogram shows that the proportion of male applicants who got approved is higher than the proportion of female applicants who got approved, which indicates that the current system might have a gender bias.
+In the first histogram, we have "1" stands for "Male", "3" stands for "Female", and "2" stands for "Joint." We can see that that the proportion of male(1) applicants who got approved is higher than the proportion of female(3) applicants who got approved, which indicates that the current system might have a gender bias.
 Besides, the second histogram conveys that the current loan approval system favors younger customers more than those older, especially those whose ages are greater than 74, which indicates that age discrimination might exist in the current system.
 
 <p align="center">  
