@@ -23,7 +23,7 @@ Next, we convert the data type for categorical features into string type values 
 
  **Columns with Missing Values**
 <p align="center">
-<img src=images/missing.png width="300" height="180">
+<img src=images/missing.png width="270" height="150">
 </p>
 
 we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant_age_above_62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating “not applicable”. Lastly, we realized that the income column is also partially absent. So we created another feature, ‘missing_income’, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
@@ -39,29 +39,24 @@ In order to better understand our dataset, we created data visualizations regard
 
 
 <p align="center">
-<img src=images/loan.png width="600" height="270">
-<img src=images/income.png width="600" height="270">
-<img src=images/property.png width="600" height="270">
+<img src=images/loan.png width="520" height="200">
+<img src=images/income.png width="520" height="200">
+<img src=images/property.png width="520" height="200">
 </p>
 
 The above Box Plot confirms the presence of outliers/extreme values, which indicates the loan amount, income, and property_value disparities among all the loan applications.
 
-Further more, we would like to investigate if there are bias hidden in the loan approval algorithms by plotting histograms to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity
-
-
-
-Histogram to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. 
-Oberservation: The number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. Most prominently in ….
+Further more, we would like to investigate if there are bias hidden in the loan approval algorithms by plotting histograms to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. Thus, we used Histogram to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as bias which are age, race, sex, and ethnicicity. 
 
 <p align="center">
-<img src=images/hist1.png width="600" height="250">
+<img src=images/hist1.png width="520" height="200">
 </p> 
 
 The first histogram shows that the proportion of male applicants who got approved is higher than the proportion of female applicants who got approved, which indicates that the current system might have a gender bias.
 Besides, the second histogram conveys that the current loan approval system favors younger customers more than those older, especially those whose ages are greater than 74, which indicates that age discrimination might exist in the current system.
 
 <p align="center">  
-<img src=images/hist2.png width="600" height="250">
+<img src=images/hist2.png width="520" height="200">
 </p>
 
 The third histogram shows that the system favors Not Hispanic or Latino since the proportion of Not Hispanic or Latino applicants who got approved is significantly higher than that of others, which tells us that ethnicity discrimination is not unlikely to happen in the current loan approval system.
@@ -86,16 +81,15 @@ A model that we have implemented is Regression, we applied linear regression to 
 We also applied a logistics model on categorical and boolean features. After obtaining the model summary from each feature, we decided to take features with coefficient < 0.01 out of consideration regarding what factors can potentially influence the loan approval status. By comparing the coefficients from the summaries of different features, we found that missing_income, Applicant_sex, applicant_age_above_62 are the important features among all the input features for the logistic model. 
 Below is an example of the model summary of feature missing_income.
 <p align="center">  
-<img src=images/logit.png width="500" height="400"> 
+<img src=images/logit.png width="250" height="200"> 
 </p>
 
 #### Random Forest
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improve accuracy, efficiency in handling large dataset, and other. The most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process. From the result of the random forest model, it illustrates that debt_to_income_ratio and loan_amount are the most important factors toward loan approval. However, applicant_age_above_62 and co-appliacnt_ethinicity also play a role in determining whether a loan should be approved, indicating that the bank does take in unfair elements into consideration and their loan approval system does appear as biased.
 
 <p align="center">
-<img src=images/randomforest.png width="600" height="300">
+<img src=images/randomforest.png width="300" height="150">
 </p>
-
 
 ## Plan for developing the project over the rest of the semester
 With the current models that we have constructed so far, we are able to determine the features with stronger significance in predicting loan approval. In the future, we are planning to perform regularization to prevent overfitting, and decrease variance. Another reason for using regularization is that we aim to develop a new system that is fair, and it will penalize certain unfair features towards loan approval to create a better model.
