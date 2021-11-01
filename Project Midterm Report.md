@@ -39,9 +39,9 @@ In order to better understand our dataset, we created data visualizations regard
 
 
 <p align="center">
-<img src=images/loan.png width="520" height="180">
-<img src=images/income.png width="520" height="180">
-<img src=images/property.png width="520" height="180">
+<img src=images/loan.png width="550" height="200">
+<img src=images/income.png width="550" height="200">
+<img src=images/property.png width="550" height="200">
 </p>
 
 The above Box Plot confirms the presence of outliers/extreme values, which indicates the loan amount, income, and property_value disparities among all the loan applications.
@@ -56,7 +56,7 @@ The first histogram shows that the proportion of male applicants who got approve
 Besides, the second histogram conveys that the current loan approval system favors younger customers more than those older, especially those whose ages are greater than 74, which indicates that age discrimination might exist in the current system.
 
 <p align="center">  
-<img src=images/hist2.png width="500" height="200">
+<img src=images/hist2.png width="500" height="250">
 </p>
 
 The third histogram shows that the system favors Not Hispanic or Latino since the proportion of Not Hispanic or Latino applicants who got approved is significantly higher than that of others, which tells us that ethnicity discrimination is not unlikely to happen in the current loan approval system.
@@ -88,7 +88,7 @@ Below is an example of the model summary of feature missing_income.
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improve accuracy, efficiency in handling large dataset, and other. The most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process. From the result of the random forest model, it illustrates that debt_to_income_ratio and loan_amount are the most important factors toward loan approval. However, applicant_age_above_62 and co-appliacnt_ethinicity also play a role in determining whether a loan should be approved, indicating that the bank does take in unfair elements into consideration and their loan approval system does appear as biased.
 
 <p align="center">
-<img src=images/randomforest.png width="320" height="150">
+<img src=images/randomforest.png width="400" height="200">
 </p>
 
 ## Plan for developing the project over the rest of the semester
