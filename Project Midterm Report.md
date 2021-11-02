@@ -81,7 +81,7 @@ A model that we have implemented is Regression, we applied linear regression to 
 We also applied a logistics model on categorical and boolean features. After obtaining the model summary from each feature, we decided to take features with coefficient < 0.01 out of consideration regarding what factors can potentially influence the loan approval status. By comparing the coefficients from the summaries of different features, we found that missing_income, Applicant_sex, applicant_age_above_62 are the important features among all the input features for the logistic model. 
 Below is an example of the model summary of feature missing_income.
 <p align="center">  
-<img src=images/logit.png width="450" height="220"> 
+<img src=images/logit.png width="470" height="220"> 
 </p>
 
 #### Random Forest
