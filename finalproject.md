@@ -9,14 +9,14 @@ Date: 12/5/2021
 Credit scores help banks, loaners, and others justify or evaluate a person’s ability to return their debt, enabling them to make the right decisions in loan approval and helping disadvantaged individuals/groups to get the loan approved. Loan evaluation would help in minimizing loan risk, maximizing banks’ profits, and protecting margins. Moreover, machine learning models can provide a more efficient and standardized way of loan approvals with less human intervention. Our project aims to evaluate the fairness of the current loan system at Bank of America across the United States in 2018 with data provided by HMDA Data Browser. Another goal is to implement a new system that is more fair compared to the original system.
 
 ## Project Dataset
-We found the dataset on the FFIEC website.
+We found the dataset on the FFIEC [website](https://ffiec.cfpb.gov/data-browser/data/2020?category=nationwide&leis=B4TYDEB6GKMZO031MB27).
 The dataset that we are planning to use is a 2018 HMDA Dataset across the United States, and the financial institution would be Bank of America, National Association - B4 TYDE B6G KMZ 031 MB27. It contains 99 features, including ethnicity, race, loan type, income, action taken, preapproval, debt to income ratio, and so on, which is sufficient for us to find the factors that contribute to the current system. It also contains ​​377468 samples. Thus, this data set will allow us to answer this question since it provides a large amount of data, which would be enough for us to divide them into a training set, a validation set, and a testing set that would help us develop our new scheme and test the accuracy.
 
 ## Avoid over (and under-) fitting
 Overall, to avoid overfitting/underfitting, we split the dataset into the training and testing set. We will apply validation methods such as examining accuracy in training and testing data while choosing parameters of models based on the validation set. Considering that we have a large number of features, we are less concerned with underfitting. By looking at loan applications from all over the country, we are able to obtain a large sample size, and a large number of features would increase the model’s complexity, which prevents overfitting. Furthermore, we have selected certain models and methodologies in our Exploratory Analysis to prevent overfitting.
 
 ## Data Cleaning and Transformation
-When we first examined our dataset, among the 99 features, we decided to first manually remove 63 features that we considered as irrelevant or duplicate information based on the feature definition and possible values of each feature presented on the data field website.
+When we first examined our dataset, among the 99 features, we decided to first manually remove 63 features that we considered as irrelevant or duplicate information based on the feature definition and possible values of each feature presented on the [data field website](https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/).
 
 Next, we convert the data type for categorical features into string type values in order to input them into different algorithms in the future. Then, we treat categorical features that contain only two possible values as boolean values corresponding to the values of 0 and 1. For categorical features with multiple values, we applied one-hot encoding. Furthermore, we decided to drop some of the outliers that we have identified in our data exploratory phase and also looked through the columns with missing values.
 
@@ -166,6 +166,11 @@ Furthermore, we constructed the Confusion Matrix of the testing dataset, to exam
 
 In which, we do see that the Random Forest model is predicting much more false negative than false positive, which means a lot more applications are being approved although they should not be. To address this issue, this should be something to be aware of in further implementation, where we will rather have more false positives than false negatives (rather predicting wrong for those who should be approved than predicting wrong for those who should not be approved.)
 
+<div style="page-break-after: always;"></div>
 
 
-
+##Bibliograohy of references
+[Orginal Dataset: https://ffiec.cfpb.gov/data-browser/data/2020?category=nationwide&leis=B4TYDEB6GKMZO031MB27](https://ffiec.cfpb.gov/data-browser/data/2020?category=nationwide&leis=B4TYDEB6GKMZO031MB27).
+[data field website:](https://ffiec.cfpb.gov/documentation/2018/lar-data-fields/).
+[Data cleaning process:](https://colab.research.google.com/drive/1OyOJC7SnGlmoUiwuDzbzjDWORMNzCqSP?usp=sharing)
+[cleaned dataset:](https://drive.google.com/file/d/1-5cKDMIyaZYH2Z3h4-9qzNv5qimxIq4b/view?usp=sharing)
