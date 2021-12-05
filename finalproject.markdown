@@ -136,14 +136,14 @@ Looking at our accuracy values for training and testing sets, we are able to obt
 
 
 <p align="center">
-<img src=imagesfinal/10.png width="700" height="180">
+<img src=imagesfinal/10.png width="400" height="100">
 </p>
 
 To create a better model, hence a model that is more fair, we decided to remove all the unfair features that was listed above (applicant_age_above_62, co-appliacnt_ethinicity, co-applicant_race, derived_race, tract_minority_population_percent, and derived_ethnicity). By doing so and training it again on the Random Forest Classifier, we achieve a training accuracy of 0.7966 and a testing accuracy of 0.803716 To conclude, although our training accuracy did decrease after removing the unfair features and our testing accuracy is around the same, we do see a slight improvement.
 
 
 <p align="center">
-<img src=imagesfinal/11.png width="400" height="80">
+<img src=imagesfinal/11.png width="400" height="60">
 </p>
 
 ## Fairness
