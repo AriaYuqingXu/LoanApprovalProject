@@ -58,7 +58,7 @@ Furthermore, we would like to investigate if there are biases hidden in the loan
 
 - The third histogram shows that the system favors Not Hispanic or Latino since the proportion of Not Hispanic or Latino applications who got approved is significantly higher than that of others, which tells us that ethnicity discrimination is not unlikely to happen in the current loan approval system.
 - From the fourth histogram, we spot a large difference between numbers of loan approved and disapproved for white applicants, while small differences for other races. It shows that racism might be a factor in the loan approval system.
-- 
+
 - Overall, the number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. According to the histograms, the loan approval system appears to favor male, younger customers, and people who are not Hispanic or Latino. 
 
 
