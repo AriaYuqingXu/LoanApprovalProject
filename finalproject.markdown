@@ -128,7 +128,7 @@ The result of the random forest model is described in the bar graph below with t
 
 
 <p align="center">
-<img src=imagesfinal/9.png width="700" height="500">
+<img src=imagesfinal/9.png width="800" height="500">
 </p>
 
 
