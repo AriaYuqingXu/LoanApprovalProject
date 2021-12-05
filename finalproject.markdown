@@ -112,14 +112,14 @@ Moreover, we have attempted to perform boosting in order to increase model compl
 Logistic regression is used when the target variable is a categorical variable, and it made sense in our analysis since loan approval is also categorical. We built a logistic regression classifier model using the training set, and we found that the testing accuracy for such a model is quite low, so we found another way to improve on the logistics model, which is using the grid search.
 
 <p align="center">
-<img src=imagesfinal/7.png width="700" height="180">
+<img src=imagesfinal/7.png width="430" height="50">
 </p>
 
 ### Grid Search:
 We performed a grid search and found that the test accuracy improved by nearly .03, since this improvement is not significant, we decided to build another model: random forest.
 
 <p align="center">
-<img src=imagesfinal/8.png width="700" height="180">
+<img src=imagesfinal/8.png width="430" height="50">
 </p>
 
 
