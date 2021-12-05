@@ -89,7 +89,7 @@ Another model that we have implemented is Random Forest. Random Forest performs 
 
 #### Hyperparameter Tuning:
 <p align="center">
-<img src=imagesfinal/4.png width="600" height="180">
+<img src=imagesfinal/4.png width="700" height="180">
 </p>
 
 
@@ -112,14 +112,14 @@ Moreover, we have attempted to perform boosting in order to increase model compl
 Logistic regression is used when the target variable is a categorical variable, and it made sense in our analysis since loan approval is also categorical. We built a logistic regression classifier model using the training set, and we found that the testing accuracy for such a model is quite low, so we found another way to improve on the logistics model, which is using the grid search.
 
 <p align="center">
-<img src=imagesfinal/7.png width="400" height="180">
+<img src=imagesfinal/7.png width="700" height="180">
 </p>
 
 ### Grid Search:
 We performed a grid search and found that the test accuracy improved by nearly .03, since this improvement is not significant, we decided to build another model: random forest.
 
 <p align="center">
-<img src=imagesfinal/8.png width="400" height="180">
+<img src=imagesfinal/8.png width="700" height="180">
 </p>
 
 
@@ -128,7 +128,7 @@ The result of the random forest model is described in the bar graph below with t
 
 
 <p align="center">
-<img src=imagesfinal/9.png width="400" height="180">
+<img src=imagesfinal/9.png width="700" height="500">
 </p>
 
 
@@ -136,14 +136,14 @@ Looking at our accuracy values for training and testing sets, we are able to obt
 
 
 <p align="center">
-<img src=imagesfinal/10.png width="400" height="180">
+<img src=imagesfinal/10.png width="700" height="180">
 </p>
 
 To create a better model, hence a model that is more fair, we decided to remove all the unfair features that was listed above (applicant_age_above_62, co-appliacnt_ethinicity, co-applicant_race, derived_race, tract_minority_population_percent, and derived_ethnicity). By doing so and training it again on the Random Forest Classifier, we achieve a training accuracy of 0.7966 and a testing accuracy of 0.803716 To conclude, although our training accuracy did decrease after removing the unfair features and our testing accuracy is around the same, we do see a slight improvement.
 
 
 <p align="center">
-<img src=imagesfinal/11.png width="400" height="180">
+<img src=imagesfinal/11.png width="700" height="180">
 </p>
 
 ## Fairness
@@ -161,7 +161,7 @@ By using techniques that we learned in class, such as feature selection, linear 
 Furthermore, we constructed the Confusion Matrix of the testing dataset, to examine our prediction errors and Equalized Odds. 
 
 <p align="center">
-<img src=imagesfinal/12.png width="400" height="180">
+<img src=imagesfinal/12.png width="450" height="300">
 </p>
 
 In which, we do see that the Random Forest model is predicting much more false negative than false positive, which means a lot more applications are being approved although they should not be. To address this issue, this should be something to be aware of in further implementation, where we will rather have more false positives than false negatives (rather predicting wrong for those who should be approved than predicting wrong for those who should not be approved.)
