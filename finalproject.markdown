@@ -72,7 +72,7 @@ A model that we have implemented is Regression, we applied linear regression to 
 
 
 <p align="center">  
-<img src=images/ols.png width="500" height="350">
+<img src=images/ols.png width="510" height="350">
 </p>
 
 
@@ -81,7 +81,7 @@ We also applied a logistics model on categorical and boolean features. After obt
 Below is an example of the model summary of feature missing_income.
 
 <p align="center">  
-<img src=images/logit.png width="470" height="220"> 
+<img src=images/logit.png width="510" height="220"> 
 </p>
 
 ### Random Forest
