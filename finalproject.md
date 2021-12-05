@@ -4,6 +4,7 @@ From: Jing Zhang (wz223), Qiwen Li (ql257), Yuqing Xu (yx486)
 To: Professor  Udell
 Re: ORIE 4741 Project Final Report 
 Date: 12/5/2021
+***We suggest viewing the PDF version of the Final Report
 
 ## Project Question and Description
 Credit scores help banks, loaners, and others justify or evaluate a person’s ability to return their debt, enabling them to make the right decisions in loan approval and helping disadvantaged individuals/groups to get the loan approved. Loan evaluation would help in minimizing loan risk, maximizing banks’ profits, and protecting margins. Moreover, machine learning models can provide a more efficient and standardized way of loan approvals with less human intervention. Our project aims to evaluate the fairness of the current loan system at Bank of America across the United States in 2018 with data provided by HMDA Data Browser. Another goal is to implement a new system that is more fair compared to the original system.
