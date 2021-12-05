@@ -143,7 +143,7 @@ To create a better model, hence a model that is more fair, we decided to remove 
 
 
 <p align="center">
-<img src=imagesfinal/11.png width="410" height="50">
+<img src=imagesfinal/11.png width="430" height="50">
 </p>
 
 ## Fairness
