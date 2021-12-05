@@ -72,7 +72,7 @@ A model that we have implemented is Regression, we applied linear regression to 
 
 
 <p align="center">  
-<img src=images/ols.png width="350" height="240">
+<img src=images/ols.png width="500" height="350">
 </p>
 
 
@@ -87,8 +87,9 @@ Below is an example of the model summary of feature missing_income.
 ### Random Forest
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improving accuracy, efficiency in handling large datasets, and others. The most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process. With the current models that we have constructed so far, we are able to determine the features with stronger significance in predicting loan approval. We will then perform cross-validation to prevent overfitting and selection bias. 
 
+#### Hyperparameter Tuning:
 <p align="center">
-<img src=imagesfinal/4.png width="200" height="180">
+<img src=imagesfinal/4.png width="600" height="180">
 </p>
 
 
@@ -96,10 +97,10 @@ A strategy that we implemented to prevent overfitting and to optimize our model 
 
 
 <p align="center">
-<img src=imagesfinal/5.png width="300" height="180">
+<img src=imagesfinal/5.png width="450" height="250">
 </p>
 <p align="center">
-<img src=imagesfinal/6.png width="300" height="180">
+<img src=imagesfinal/6.png width="450" height="250">
 </p>
 
 
