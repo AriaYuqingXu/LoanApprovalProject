@@ -13,7 +13,7 @@ We found the dataset on the FFIEC website.
 The dataset that we are planning to use is a 2018 HMDA Dataset across the United States, and the financial institution would be Bank of America, National Association - B4 TYDE B6G KMZ 031 MB27. It contains 99 features, including ethnicity, race, loan type, income, action taken, preapproval, debt to income ratio, and so on, which is sufficient for us to find the factors that contribute to the current system. It also contains ​​377468 samples. Thus, this data set will allow us to answer this question since it provides a large amount of data, which would be enough for us to divide them into a training set, a validation set, and a testing set that would help us develop our new scheme and test the accuracy.
 
 ## Avoid over (and under-) fitting
-Overall, to avoid overfitting/underfitting, we have split up the dataset into the training and testing set. We will apply validation methods such as examining accuracy in training and testing data while choosing parameters of models based on the validation set. Considering that we have a large number of features, we are less concerned with underfitting. By looking at loan applications from all over the country, we are able to obtain a large sample size, and a large number of features would increase the model’s complexity, which prevents overfitting. Furthermore, we have selected certain models and methodologies in our Exploratory Analysis to prevent overfitting.
+Overall, to avoid overfitting/underfitting, we split the dataset into the training and testing set. We will apply validation methods such as examining accuracy in training and testing data while choosing parameters of models based on the validation set. Considering that we have a large number of features, we are less concerned with underfitting. By looking at loan applications from all over the country, we are able to obtain a large sample size, and a large number of features would increase the model’s complexity, which prevents overfitting. Furthermore, we have selected certain models and methodologies in our Exploratory Analysis to prevent overfitting.
 
 ## Data Cleaning and Transformation
 When we first examined our dataset, among the 99 features, we decided to first manually remove 63 features that we considered as irrelevant or duplicate information based on the feature definition and possible values of each feature presented on the data field website.
@@ -49,6 +49,9 @@ Furthermore, we would like to investigate if there are biases hidden in the loan
 <p align="center">
 <img src=images/hist1.png width="550" height="200">
 </p> 
+<p align="center">  
+<img src=images/hist2.png width="500" height="270">
+</p>
 
 - The first histogram shows that the proportion of male applicants who got approved is higher than the proportion of female applicants who got approved, which indicates that the current system might have a gender bias.
 - The second histogram conveys that the current loan approval system favors younger customers more than those older, especially those whose ages are greater than 74, which indicates that age discrimination might exist in the current system.
@@ -84,7 +87,7 @@ Below is an example of the model summary of feature missing_income.
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improving accuracy, efficiency in handling large datasets, and others. The most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process. With the current models that we have constructed so far, we are able to determine the features with stronger significance in predicting loan approval. We will then perform cross-validation to prevent overfitting and selection bias. 
 
 <p align="center">
-<img src=imagesfinal/4.png width="400" height="180">
+<img src=imagesfinal/4.png width="200" height="180">
 </p>
 
 
@@ -92,10 +95,10 @@ A strategy that we implemented to prevent overfitting and to optimize our model 
 
 
 <p align="center">
-<img src=imagesfinal/5.png width="400" height="180">
+<img src=imagesfinal/5.png width="300" height="180">
 </p>
 <p align="center">
-<img src=imagesfinal/6.png width="400" height="180">
+<img src=imagesfinal/6.png width="300" height="180">
 </p>
 
 
