@@ -20,7 +20,10 @@ When we first examined our dataset, among the 99 features, we decided to first m
 
 Next, we convert the data type for categorical features into string type values in order to input them into different algorithms in the future. Then, we treat categorical features that contain only two possible values as boolean values corresponding to the values of 0 and 1. For categorical features with multiple values, we applied one-hot encoding. Furthermore, we decided to drop some of the outliers that we have identified in our data exploratory phase and also looked through the columns with missing values.
 
-# graph
+ **Columns with Missing Values**
+<p align="center">
+<img src=images/missing.png width="250" height="120">
+</p>
 
 we decided to drop some of the insignificant rows that are missing in value in various columns, like conforming_loan_limit, loan_term, property_value, debt_to_income_ratio, and applicant_race-1, since there are less than 2% of our data don’t have these values. For missing values in the applicant_age_above_62 column, we considered them as “not applicable” because the other two values are 1(yes) and 2(no) so we replaced the missing ones with value 3, indicating “not applicable”. Lastly, we realized that the income column is also partially absent. So we created another feature, missing_income, that states if the value in the income column is missing which we thought would be interesting to examine later on. In order to fix the problem of missing income, we looked at correlations between other variables and income and we found out that loan amount is the highest correlated variable. With the loan amount, we applied the linear regression model to predict the missing income values based on the loan amount. 
 For our target feature, action taken, which tells whether the loan application is approved or not, we transform the feature value to 1 if it’s approved, and 0 otherwise.
@@ -33,16 +36,23 @@ Now, the dataset contains documentation of 371,930 samples of loan applications 
 ## Histogram and boxplots for various important features of the dataset
 In order to better understand our dataset, we created data visualizations regarding some of the relevant features that could be insightful. We constructed boxplots to see the spread of the data based on different features by loan approval status with the percentile distribution; it helps us identify outliers that were removed in later data-cleaning processes.
 
-# graph
+<p align="center">
+<img src=images/loan.png width="550" height="190">
+<img src=images/income.png width="550" height="190">
+<img src=images/property.png width="550" height="190">
+</p>
 
 The above Box Plot confirms the presence of outliers/extreme values, which indicates the loan amount, income, and property_value disparities among all the loan applications.
 
 Furthermore, we would like to investigate if there are biases hidden in the loan approval algorithms by plotting histograms to see the variability of the numbers of loan applications that are approved or disapproved based on some features that we considered as biases which are age, race, sex, and ethnicity. 
 
-# graph
+<p align="center">
+<img src=images/hist1.png width="550" height="200">
+</p> 
 
 - The first histogram shows that the proportion of male applicants who got approved is higher than the proportion of female applicants who got approved, which indicates that the current system might have a gender bias.
 - The second histogram conveys that the current loan approval system favors younger customers more than those older, especially those whose ages are greater than 74, which indicates that age discrimination might exist in the current system.
+
 - The third histogram shows that the system favors Not Hispanic or Latino since the proportion of Not Hispanic or Latino applications who got approved is significantly higher than that of others, which tells us that ethnicity discrimination is not unlikely to happen in the current loan approval system.
 - From the fourth histogram, we spot a large difference between numbers of loan approved and disapproved for white applicants, while small differences for other races. It shows that racism might be a factor in the loan approval system.
 - Overall, the number of applications approved is lower for underrepresented groups among each classification of sex, age, race, and ethnicity. According to the histograms, the loan approval system appears to favor male, younger customers, and people who are not Hispanic or Latino. 
@@ -57,27 +67,36 @@ We are exploring the most correlated features associated with the target feature
 A model that we have implemented is Regression, we applied linear regression to real value variables and logistic regression to categorical and boolean variables. Overall, Linear Regression and Logistic Regression works in a similar way. Linear regression uses a linear function to predict y that minimizes the sum of square residuals and returns numerical values associated with the target feature. By running a linear model on features with real-valued data, we can see that the total_units has the most significant impact on the loan approval process since it has the highest coefficient.
 
 
-# graph OLS result
+<p align="center">  
+<img src=images/ols.png width="350" height="240">
+</p>
 
 
 ### Logistic Regression
 We also applied a logistics model on categorical and boolean features. After obtaining the model summary from each feature, we decided to take features with coefficient < 0.01 out of consideration regarding what factors can potentially influence the loan approval status. By comparing the coefficients from the summaries of different features, we found that missing_income, Applicant_sex, applicant_age_above_62 are the important features among all the input features for the logistic model. 
 Below is an example of the model summary of feature missing_income.
 
-
-# graph Logistic result
+<p align="center">  
+<img src=images/logit.png width="470" height="220"> 
+</p>
 
 ### Random Forest
 Another model that we have implemented is Random Forest. Random Forest performs a bootstrap aggregated ensemble model of trees containing random subsets of features and it can be applied to both regression and classification. The benefits of Random Forest include: reduce overfitting, improving accuracy, efficiency in handling large datasets, and others. The most important attribute of Random Forest is its ability to rank feature importance which would provide massive insight toward our research question to determine the key predictive features that are used to determine loan approval in the current BOA loan approval process. With the current models that we have constructed so far, we are able to determine the features with stronger significance in predicting loan approval. We will then perform cross-validation to prevent overfitting and selection bias. 
 
-#### Hyperparameter tuning: graph hyper tuning
-
+<p align="center">
+<img src=imagesfinal/4.png width="400" height="180">
+</p>
 
 
 A strategy that we implemented to prevent overfitting and to optimize our model is cross-validation. Cross-validation allows us to find the best parameters that optimize the accuracy of the model by performing a resampling procedure repeatedly. We utilized 10 fold cross-validation to execute hyperparameter tuning for our Random Forest model with a validation set that is 20 percent of the training set. We held the parameter, n_estimators, to be a constant of 100 due to the runtime, then looping through the possible values of min_samples_leaf between 15 to 40 and max_dept between 5 to 25. We made a deliberate decision in setting the lower bound of our min_samples_leaf parameter to be 15 to prevent overfitting/underfitting and we chose the upper bound of 40 in order to still examine a wide range of options. Same decisions are made for the lower and upper bound of parameter max_dept to avoid overfitting/underfitting. We trained the model with the hyperparameters and evaluated it based on how well it scored on the validation data. By examining the first line graph below, “Accuracy VS. Min_Sample_Leaf”, we see a peak at min_sample_leaf equals 15 which corresponds to the highest train accuracy and validation accuracy. The line graph “Accuracy VS. Max. Depth” suggests that the optimal max_depth is around 15 since the margin between train accuracy and validation accuracy is within 0.01. In the end, we concluded that the minimum error amount occurred at the optimal parameters of min_samples_leaf equal 15 and max_depth equal 15.
 
 
-# accuracy graph
+<p align="center">
+<img src=imagesfinal/5.png width="400" height="180">
+</p>
+<p align="center">
+<img src=imagesfinal/6.png width="400" height="180">
+</p>
 
 
 Moreover, we have attempted to perform boosting in order to increase model complexity and accuracy, but we discovered that it overfits the training model resulting in lower test accuracy. We decided to then discard that implementation, the attempt is still available in our Python Notebook.
@@ -87,30 +106,40 @@ Moreover, we have attempted to perform boosting in order to increase model compl
 ### Logistic Regression Classifier:
 Logistic regression is used when the target variable is a categorical variable, and it made sense in our analysis since loan approval is also categorical. We built a logistic regression classifier model using the training set, and we found that the testing accuracy for such a model is quite low, so we found another way to improve on the logistics model, which is using the grid search.
 
-# ...
+<p align="center">
+<img src=imagesfinal/7.png width="400" height="180">
+</p>
 
 ### Grid Search:
 We performed a grid search and found that the test accuracy improved by nearly .03, since this improvement is not significant, we decided to build another model: random forest.
 
-# ...
+<p align="center">
+<img src=imagesfinal/8.png width="400" height="180">
+</p>
 
 
 ### Random Forest:
 The result of the random forest model is described in the bar graph below with the printout of the Top 20 Important Features By Random Forest. It illustrates that debt_to_income_ratio, loan_amount, and income are the most important factors toward loan approval. However, applicant_age_above_62, co-appliacnt_ethinicity, co-applicant_race, derived_race, tract_minority_population_percent, and derived_ethnicity also play a role in determining whether a loan should be approved, indicating that the bank does take unfair elements into consideration and their loan approval system does appear as biased. We considered these features as unfair because they are factors that people cannot physically change, they are identities that people are born with or have no control over.
 
 
-# ...
+<p align="center">
+<img src=imagesfinal/9.png width="400" height="180">
+</p>
 
 
 Looking at our accuracy values for training and testing sets, we are able to obtain relatively high accuracy for both subsets of data. This means we are able to avoid overfitting and the model does not underfit because the model is complex and we used feature selection to select highly correlated features then implemented cross-validation to improve our accuracy. Our training accuracy is 0.804, validation accuracy is 0.794, and the testing accuracy is 0.801.
 
 
-# ... graph
+<p align="center">
+<img src=imagesfinal/10.png width="400" height="180">
+</p>
 
 To create a better model, hence a model that is more fair, we decided to remove all the unfair features that was listed above (applicant_age_above_62, co-appliacnt_ethinicity, co-applicant_race, derived_race, tract_minority_population_percent, and derived_ethnicity). By doing so and training it again on the Random Forest Classifier, we achieve a training accuracy of 0.7966 and a testing accuracy of 0.803716 To conclude, although our training accuracy did decrease after removing the unfair features and our testing accuracy is around the same, we do see a slight improvement.
 
 
-# ...
+<p align="center">
+<img src=imagesfinal/11.png width="400" height="180">
+</p>
 
 ## Fairness
 Fairness is the most important criterion to consider when choosing a model since that is the goal of our project. Examining the top 20 important features of the current model we see some variables violating the fairness of Equality of Opportunity where features relating to race,
@@ -126,7 +155,9 @@ Predictive Rate Parity also makes sense since the bank would want to know what f
 By using techniques that we learned in class, such as feature selection, linear and logistic regression, cross-validation, logistic regression classifier, grid search, and random forest, we investigated the fairness of the current loan approval system.  We used validation sets, k-fold-validation specifically to test effectiveness. We also plan to compare MSE, p-values, and R-squared values for different models to choose the optimal model. Additionally, we built a new model with all the baised features removed, and found out that training accuracy and testing accuracy are both approximately 0.80, which indicates that it’s a fair model.
 Furthermore, we constructed the Confusion Matrix of the testing dataset, to examine our prediction errors and Equalized Odds. 
 
-# ...
+<p align="center">
+<img src=imagesfinal/12.png width="400" height="180">
+</p>
 
 In which, we do see that the Random Forest model is predicting much more false negative than false positive, which means a lot more applications are being approved although they should not be. To address this issue, this should be something to be aware of in further implementation, where we will rather have more false positives than false negatives (rather predicting wrong for those who should be approved than predicting wrong for those who should not be approved.)
 
